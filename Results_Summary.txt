@@ -1,0 +1,70 @@
+
+BENZENE-TOLUENE DISTILLATION SURROGATE MODEL
+==================================================
+
+Dataset
+-------
+Number of unique simulations: 147
+Number of input variables: 7
+Number of output variables: 4
+
+Inputs
+------
+- Feed_T_K
+- Feed_P_Pa
+- Feed_xBenzene
+- Number_of_Stages
+- Feed_Stage
+- Reflux_Ratio
+- Bottoms_Flow_mol_s
+
+Outputs
+-------
+- xD_Benzene
+- xB_Benzene
+- QC_kW
+- QR_kW
+
+Models Compared
+---------------
+1. Linear Regression
+2. Random Forest
+3. XGBoost
+4. Artificial Neural Network
+
+Train/Test Split
+----------------
+Training samples: 117
+Testing samples: 30
+
+Best Model
+----------
+XGBoost
+
+Average MAE
+-----------
+0.027851
+
+Average RMSE
+------------
+0.041206
+
+Average R2
+----------
+0.938764
+
+Physical Consistency
+--------------------
+Predictions were checked for physically invalid
+benzene purities outside the [0,1] interval.
+
+Dataset limitation
+------------------
+Successful DWSIM simulations represented 10-stage
+and 12-stage columns. No converged 14-stage or
+16-stage cases were retained.
+
+Duty convention
+---------------
+Condenser and reboiler duties were represented as
+positive magnitudes for consistent surrogate modeling.
